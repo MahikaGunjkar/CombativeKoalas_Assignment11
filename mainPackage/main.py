@@ -1,9 +1,7 @@
 #main.py
 
-#main.py
-
-from data_anomaly.anomaly_handler import AnomalyHandler
-from cleaned_data.data_cleaner import DataCleaner
+from cleanedDataPackage.cleanedData import *
+from dataAnomoliesPackage.dataAnomolies import *
 import requests
 
 if __name__ == "__main__":
