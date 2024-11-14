@@ -5,7 +5,7 @@ from dataAnomoliesPackage.dataAnomolies import *
 import requests
 
 if __name__ == "__main__":
-    print("Starting the program")
+    api_key = '28e3c380-a0fc-11ef-9dfd-19e3353ada6e'
 
     def get_zip_code(city, api_key):
         # Perform the API request to get zip code
@@ -20,8 +20,7 @@ if __name__ == "__main__":
  
     def main():
         # Define paths and API key
-        input_csv = 'data/fuel_data.csv'
-        api_key = 'YOUR_ZIPCODEBASE_API_KEY'
+        input_csv = 'data/fuelPurchaseData.csv'
  
         # Step 1: Process anomalies
         anomaly_handler = AnomalyHandler(input_csv)
@@ -31,3 +30,6 @@ if __name__ == "__main__":
         data_cleaner = DataCleaner(input_csv)
         data_cleaner.clean_data(api_key, get_zip_code)
  
+if __name__ == "__main__":
+    print("Starting the program")
+    main()

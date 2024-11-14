@@ -9,12 +9,12 @@ class AnomalyHandler:
     def process_anomalies(self):
         # Load data and identify anomalies
         df = pd.read_csv(self.csv_path)
-        anomalies = df[df['Product'] == 'Pepsi']  # Rows with Pepsi
+        anomalies = df[df['Fuel Type'] == 'Pepsi']  # Rows with Pepsi
  
         # Save anomalies to dataAnomalies.csv
         anomalies.to_csv('data/dataAnomalies.csv', index=False)
         # Filter out anomalies and retain only relevant rows
-        self.cleaned_df = df[df['Product'] != 'Pepsi']
+        self.cleaned_df = df[df['Fuel Type'] != 'Pepsi']
 
 
 
