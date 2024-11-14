@@ -29,7 +29,6 @@ if __name__ == "__main__":
         # Step 2: Clean data
         data_cleaner = DataCleaner(input_csv)
         data_cleaner.clean_data(api_key, get_zip_code)
- 
-if __name__ == "__main__":
+
     print("Starting the program")
     main()
