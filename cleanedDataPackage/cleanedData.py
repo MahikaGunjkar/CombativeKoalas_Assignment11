@@ -1,4 +1,5 @@
 import pandas as pd
+import requests
 import re
 
 class DataCleaner:
@@ -31,10 +32,23 @@ class DataCleaner:
         return df
 
     def clean_data(self, api_key, get_zip_code_func):
-        # Use low_memory=False to avoid dtype warning
         df = pd.read_csv(self.csv_path, low_memory=False)
 
         df = df.drop_duplicates()
         df = self.format_gross_price(df)
         df = self.fill_missing_zip_codes(df, api_key, get_zip_code_func)
         df.to_csv('data/cleanedData.csv', index=False)
+
+
+def get_zip_code(city, api_key):
+    try:
+        response = requests.get(
+            f"https://app.zipcodebase.com/api/v1/search?apikey={api_key}&city={city}",
+            timeout=5  # Timeout for the request
+        )
+        response.raise_for_status()
+        zip_codes = response.json().get('results', {}).get(city, [])
+        return zip_codes[0] if zip_codes else None
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching zip code for city '{city}': {e}")
+        return None
