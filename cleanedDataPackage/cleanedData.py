@@ -1,3 +1,17 @@
+# Name: Mahika Gunjkar, Nandini Agrawal, Ishani Roy Chowdhury, Greyson Barber
+# email:  gunjkamg@mail.uc.edu, Agarwand@mail.uc.edu, roychoii@mail.uc.edu, barbergn@mail.uc.edu
+# Assignment Number: Assignment 11
+# Due Date:   11/21/2024
+# Course #/Section:  4010- 001
+# Semester/Year:   Fall 2024
+# Brief Description of the assignment: In this assignment, we need to clean up the data in the provided CSV file. 
+
+# Brief Description of what this module does. This module is making sure there are no anomolies within the fuel column. Ensuring that it's only fuel types, no Pepsi.
+# Citations:
+# Anything else that's relevant : We did a bit research and got to know that because of the free accound we can only get upto 5000 credits worth data, as the file is running the 
+# output is crashing after a certain point as the data is exceeding the limit. Also we realised that the API key does not work the moment we push something to github and it gets cancelled
+
+# cleanedData.py
 import pandas as pd
 import numpy as np
 import re
@@ -32,8 +46,8 @@ class DataCleaner:
         )
         
         # Print the DataFrame before and after filling missing zip codes
-        print("Before filling missing zip codes:")
-        print(df.head())
+        #print("Before filling missing zip codes:")
+        #print(df.head())
         
         for idx, row in df[df['Zip Code'].isna()].iterrows():
             city = row['City']
@@ -42,8 +56,8 @@ class DataCleaner:
                 if zip_code:
                     df.at[idx, 'Zip Code'] = zip_code
 
-        print("After filling missing zip codes:")
-        print(df.head())
+        #print("After filling missing zip codes:")
+        #print(df.head())
         
         return df
 
