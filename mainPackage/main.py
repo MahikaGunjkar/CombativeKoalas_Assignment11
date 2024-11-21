@@ -36,14 +36,16 @@ if __name__ == "__main__":
         Returns:
             str or None: The first zip code for the city if available, otherwise None.
         """
-        url = f"https://app.zipcodebase.com/api/v1/search?apikey={api_key}&city={city}"
+        url = f"https://app.zipcodebase.com/api/v1/code/city?apikey={api_key}&city={city}&country=us"
         retries = 0
 
         while retries < max_retries:
             try:
                 response = requests.get(url, timeout=5)
+                print(response)
                 response.raise_for_status()
-                zip_codes = response.json().get('results', {}).get(city, [])
+                zip_codes = response.json().get('results', {})
+                print(zip_codes)
                 return zip_codes[0] if zip_codes else None
             except requests.exceptions.RequestException as e:
                 retries += 1
@@ -55,7 +57,7 @@ if __name__ == "__main__":
         return FALLBACK_ZIP_CODES.get(city, None)
 
     # Define paths and API key
-    api_key = "28e3c380-a0fc-11ef-9dfd-19e3353ada6ee" 
+    api_key = "" 
     input_csv = 'data/fuelPurchaseData.csv'
 
     # Step 1: Process anomalies
