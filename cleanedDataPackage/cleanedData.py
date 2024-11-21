@@ -8,7 +8,9 @@
 
 # Brief Description of what this module does. This module is ensuring that the addresses all have a zipcode associated with it, ensuring that all of the data points have a full and valid address.
 # Citations:
-# Anything else that's relevant:
+# Anything else that's relevant : We did a bit research and got to know that because of the free accound we can only get upto 5000 credits worth data, as the file is running the 
+# output is crashing after a certain point as the data is exceeding the limit. Also we realised that the API key does not work the moment we push something to github and it gets cancelled.
+
 
 import pandas as pd
 import re
