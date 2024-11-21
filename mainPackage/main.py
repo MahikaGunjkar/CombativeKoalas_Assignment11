@@ -29,14 +29,7 @@ if __name__ == "__main__":
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
 
-    # Example fallback zip code dictionary
-    FALLBACK_ZIP_CODES = {
-        "Lynchburg": "45142",
-        "Clifton": "45316",
-        "Cleveland": "44101",
-        "Bethel": "45106",
-        "Circleville": "43113"
-    }
+    
 
     def get_zip_code(city, api_key, max_retries=3):
         """
@@ -67,8 +60,7 @@ if __name__ == "__main__":
                 logging.error(f"Error fetching zip code for city '{city}': {e}")
                 time.sleep(2)  # Backoff before retrying
 
-        print(f"Using fallback for city '{city}'.")
-        return FALLBACK_ZIP_CODES.get(city, None)
+       
 
     # Define paths and API key
     api_key = "" 
