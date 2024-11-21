@@ -1,3 +1,15 @@
+# Name: Mahika Gunjkar, Nandini Agrawal, Ishani Roy Chowdhury, Greyson Barber
+# email:  gunjkamg@mail.uc.edu, Agarwand@mail.uc.edu, roychoii@mail.uc.edu, barbergn@mail.uc.edu
+# Assignment Number: Assignment 1
+# Due Date:   11/21/2024
+# Course #/Section:  4010- 001
+# Semester/Year:   Fall 2024
+# Brief Description of the assignment: In this assignment, we need to clean up the data in the provided CSV file. 
+
+# Brief Description of what this module does. This module is making sure there are no anomolies within the fuel column. Ensuring that it's only fuel types, no Pepsi.
+# Citations:
+# Anything else that's relevant:
+
 import pandas as pd
 
 class AnomalyHandler:
