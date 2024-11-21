@@ -6,10 +6,12 @@
 # Semester/Year:   Fall 2024
 # Brief Description of the assignment: In this assignment, we need to clean up the data in the provided CSV file. 
 
-# Brief Description of what this module does. This module is running the functions to get all of the clean data.
-# Citations:
-# Anything else that's relevant : We did a bit research and got to know that because of the free accound we can only get upto 5000 credits worth data, as the file is running the 
-# output is crashing after a certain point as the data is exceeding the limit. Also we realised that the API key does not work the moment we push something to github and it gets cancelled.
+# Brief Description of what this module does. This is the main.py. It has all the codes to run create the csv files.
+# Citations: Used chat gpt 
+# Anything else that's relevant : We have added dictionary such that our code runs and functions even if the api key fails
+                                 # The api key is getting terminated once we are pushing it to github
+                                 # ZipCode is in Cleandata.csv
+                                 # other changes in cleanfueldata.csv
 
 # main.py
 
@@ -80,7 +82,7 @@ if __name__ == "__main__":
        
 
     # Define paths and API key
-    api_key = "" 
+    api_key = "fa3c4b50-a7b3-11ef-893d-21491452e5d3" 
     input_csv = 'data/fuelPurchaseData.csv'
 
     # Step 1: Process anomalies

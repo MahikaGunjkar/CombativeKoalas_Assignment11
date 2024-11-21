@@ -6,11 +6,12 @@
 # Semester/Year:   Fall 2024
 # Brief Description of the assignment: In this assignment, we need to clean up the data in the provided CSV file. 
 
-# Brief Description of what this module does. This module is making sure there are no anomolies within the fuel column. Ensuring that it's only fuel types, no Pepsi.
-# Citations:
-# Anything else that's relevant : We did a bit research and got to know that because of the free accound we can only get upto 5000 credits worth data, as the file is running the 
-# output is crashing after a certain point as the data is exceeding the limit. Also we realised that the API key does not work the moment we push something to github and it gets cancelled.
-
+# Brief Description of what this module does. This module is making sure there are no anomolies within the fuel column. Ensuring that it's only fuel types, is Pepsi.
+# Citations: Used chat gpt
+# Anything else that's relevant : We have added dictionary such that our code runs and functions even if the api key fails
+                                 # The api key is getting terminated once we are pushing it to github
+                                  # ZipCode is in Cleandata.csv
+                                 # other changes in cleanfueldata.csv
 # dataAnomolies.py
 import pandas as pd
 
